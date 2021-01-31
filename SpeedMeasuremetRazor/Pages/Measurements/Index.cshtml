@@ -1,0 +1,48 @@
+﻿@page
+@model SpeedMeasuremetRazor.Pages.Measurements.IndexModel
+@{
+    ViewData["Title"] = "SpeedMeasurements";
+}
+
+<h1>List of speedmeasrements</h1>
+<p>
+    Numbers of registrations : @Model.repo.GetAllSpeedMeasurements().Count
+</p>
+<p>
+    <a asp-page="CreateSpeedMeasurement">Create measurement</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>SpeedMeasurement Id</th>
+            <th>Speed registred</th>
+            <th>Timestamp</th>
+            <th>Address</th>
+            <th>Zone</th>
+            <th>SpeedLimit</th>
+            <th>Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.repo.GetAllSpeedMeasurements())
+        {
+        <tr>
+            <td> @item.Id</td>
+            <td> @item.Speed</td>
+            <td> @item.TimeStamp</td>
+            <td> @item.Location.Address</td>
+            <td> @item.Location.Zone</td>
+            <td> @item.Location.SpeedLimit</td>
+            <td> <img src="~/Images/@item.ImageName" width="60" height="70"> </td>
+            <td>
+                <form method="post">
+                    <button asp-page-handler="Delete" asp-route-id="@item.Id"
+                            class="btn btn-danger btn-group-lg pull-right">
+                        Delete
+                    </button>
+                </form>
+            <td>
+        </tr>
+        }
+    </tbody>
+</table>
