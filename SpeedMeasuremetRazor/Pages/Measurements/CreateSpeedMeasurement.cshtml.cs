@@ -66,7 +66,7 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             {
                 _speedMeasurementRepo.AddSpeedMeasurement(randomSpeed, location, MockData.RandomImage);
             }
-            catch (CalibreringsException cex)
+            catch (CalibrationException cex)
             {
                 CreateOtionsList();
                 InfoText = $"The camera must be calibrated contact the support department or try again! {cex.Message}";

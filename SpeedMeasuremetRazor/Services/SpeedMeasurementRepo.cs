@@ -29,7 +29,7 @@ namespace SpeedMeasuremetRazor.Services
                 _measurements.Add(new SpeedMeasurement(speed,location, imageName));
             else
             {
-                throw new CalibreringsException($"Incorrect speed {speed} km/t - something went wrong!");
+                throw new CalibrationException($"Incorrect speed {speed} km/t - something went wrong!");
             }
         }
 

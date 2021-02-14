@@ -25,8 +25,11 @@ namespace SpeedMeasuremetRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<ILocationRepo, LocationRepo>();
-            services.AddSingleton<ISpeedMeasurementRepo, SpeedMeasurementRepo>();
+            //services.AddSingleton<ILocationRepo, LocationRepo>();
+            //services.AddSingleton<ISpeedMeasurementRepo, SpeedMeasurementRepo>();
+
+            services.AddTransient<ILocationRepo, JsonLocationRepo>();
+            services.AddTransient<ISpeedMeasurementRepo, JsonSpeedMeasurementRepo>();
 
         }
 

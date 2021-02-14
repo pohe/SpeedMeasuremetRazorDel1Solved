@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace SpeedMeasuremetRazor.Exceptions
 {
-    public class CalibreringsException: Exception
+    public class CalibrationException: Exception
     {
-        public CalibreringsException(string message): base(message)
+        public CalibrationException(string message): base(message)
         {
             
         }

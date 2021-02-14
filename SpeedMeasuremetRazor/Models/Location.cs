@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,9 +30,9 @@ namespace SpeedMeasuremetRazor.Models
             SpeedLimit = speedLimit;
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(Object obj)
         {
-            Location loc=null;
+            Location loc = null;
             if (obj is Location)
             {
                 loc = (Location)obj;
@@ -40,5 +41,7 @@ namespace SpeedMeasuremetRazor.Models
             }
             return false;
         }
+
+        
     }
 }
