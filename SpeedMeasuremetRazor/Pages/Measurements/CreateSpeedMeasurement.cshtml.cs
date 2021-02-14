@@ -69,18 +69,18 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
             catch (CalibrationException cex)
             {
                 CreateOtionsList();
-                InfoText = $"The camera must be calibrated contact the support department or try again! {cex.Message}";
+                InfoText = $"Error. The camera must be calibrated contact the support department or try again! {cex.Message}";
                 return Page();
             }
             catch (ArgumentException aex)
             {
                 CreateOtionsList();
-                InfoText = $"The camera must be calibrated contact the support department or try again! {aex.Message}";
+                InfoText = $"Error. The camera must be calibrated contact the support department or try again! {aex.Message}";
                 return Page();
             }
             catch ( Exception ex)
             {
-                InfoText = $"Something went wrong!Contact the support department {ex.Message}";
+                InfoText = $"Error. Something went wrong!Contact the support department {ex.Message}";
                 CreateOtionsList();
                 return Page();
             }

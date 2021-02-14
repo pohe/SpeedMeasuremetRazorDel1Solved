@@ -26,8 +26,9 @@
             <img src="~/Images/camera-button.jpg" width="300" height="300" />
         </div>
     </div>
-    <div class="alert alert-warning" role="alert">
+    
+    <div class="@(Model.InfoText.Contains("Error") ? "alert alert-warning": "alert alert-danger")" role="alert">
         @Model.InfoText
     </div>
-    
+
 </form>
